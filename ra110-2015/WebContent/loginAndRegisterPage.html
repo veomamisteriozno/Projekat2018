@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+	<title>Food delivery</title>
+	<script src="scripts/jquery-3.3.1.min.js"></script>
+	<script src="scripts/loginAndRegisterPageScript.js"></script>
+</head>
+<body>
+
+<!-- LOGIN FORM -->
+<div id="loginInDiv" style="width: 50%; height: 100%; background: white; left: 0; top:0; position: fixed;">
+	<div style="position: absolute; left: 50%; top:50%; transform: translate(-50%, -50%); text-align: center; color: #0e4749">
+		<p> LOGIN </p>
+		<hr/>
+		<form id="login">
+			<table style="text-align: left">
+				<tr>
+					<td> Username: </td>
+					<td> <input type="text" name="username" placeholder="Enter username" required/>  </td>
+				</tr>
+				<tr>
+					<td> Password: </td>
+					<td> <input type="password" name="password" placeholder="Enter password" required/>  </td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: right;"> <input type="submit" value="Login"> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+
+<!-- REGISTER FORM -->
+<div id="registerDiv" style="width: 50%; height: 100%; background: #0e4749; right: 0; top:0; position: fixed; ">
+	<div style="position: absolute; left: 50%; top:50%; transform: translate(-50%, -50%); text-align: center; color: white">
+		<p> REGISTER </p>
+		<hr/>
+		<form id="register">
+			<table style="text-align: left">
+				<tr>
+					<td> Username: </td>
+					<td> <input type="text" name="username" placeholder="Enter username" required/>  </td>
+				</tr>
+				<tr>
+					<td> Password: </td>
+					<td> <input type="password" name="password" placeholder="Enter password" required/>  </td>
+				</tr>
+				<tr>
+					<td> First name: </td>
+					<td> <input type="text" name="firstName" placeholder="Enter first name" required/>  </td>
+				</tr>
+				<tr>
+					<td> Surname: </td>
+					<td> <input type="password" name="password" placeholder="Enter surname" required/>  </td>
+				</tr>
+				<tr>
+					<td> Phone number: </td>
+					<td> <input type="password" name="password" placeholder="7543010" required/>  </td>
+				</tr>
+				<tr>
+					<td> Email: </td>
+					<td> <input type="password" name="password" placeholder="example@example.exp" required/>  </td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: right;"> <input type="submit" value="Register"> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
