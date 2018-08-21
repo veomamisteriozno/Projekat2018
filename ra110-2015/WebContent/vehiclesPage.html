@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food delivery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />     
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="scripts/restaurantsPageScript.js"></script>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="margin-bottom: 0; border-radius: 0">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Food delivery</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- Left links -->
+		      <ul class="nav navbar-nav">
+		        <li><a href="index.html">Index</a></li>
+		        <li><a href="restaurantsPage.html">Restaurants</a></li>
+		        <li><a href="#">Meals and drinks</a></li>	
+		        <li><a href="#">Users</a></li>	
+		        <li class="active"><a href="#">Vehicles</a></li>		
+		        <li><a href="#">Orders</a></li>	        
+		      </ul>		     
+
+			  <!-- Right links -->
+		      <ul class="nav navbar-nav navbar-right">		      
+		        <li><a href="loginAndRegisterPage.html">Login/Register</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">username<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Account info</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+			<div class="col-sm-2 sidenav admin" style="padding-top: 20px">
+				<div class="well">
+			        <h2 id="title">Add vehicle</h2>		      
+			        <hr style="border-top: 1px solid white;">				
+	                <form id="addVehicle">
+	                	<table style="width: 100%; text-align: center">
+	                		<tr><td> <input type="hidden" name="id" placeholder="Vehicle id" required style="width: 100%;"/> </td></tr>
+	                		<tr><th> Brand: </th></tr>
+	                		<tr><td> <input type="text" name="brand" placeholder="Brand name" required style="width: 100%;"/>  </td></tr>
+	                		<tr><th> Model: </th></tr>
+	                		<tr><td> <input type="text" name="model" placeholder="Model name" required style="width: 100%;"/>  </td></tr>
+	                		<tr><th> Type: </th></tr>
+	                		<tr>
+	                			<td>
+	                			<select name="type" style="width: 100%; height: 25px" required="required">
+	                				<option>Car</option>
+	                				<option>Scooter </option>
+	                				<option>Bicycle </option>	                			
+	                			</select>
+	                			</td>
+	                		</tr>
+	                		<tr><th> Plates number: </th></tr>
+	                		<tr><td> <input type="text" name="platesNumber" placeholder="NS322-233" required style="width: 100%;"/>  </td></tr>
+	                		<tr><th> Production year: </th></tr>
+	                		<tr><td> <input type="text" name="productionYear" placeholder="2018" required style="width: 100%;"/>  </td></tr>
+	                		<tr><th> Note: </th></tr>
+	                		<tr><th> <textarea class="form-control" rows="3" placeholder="Enter text here..." name="note"></textarea> </th></tr>
+	                		<tr>
+	                			<td> 
+	                				<input type="button" value="Add" name="addVehicleSubmit" id="addVehicleSubmit" class="btn btn-default" style="margin-top: 10px; margin-bottom: 10px" onclick="sumbitAddRestaurantForm()"> 
+	                				<input type="button" value="Reset" name="addVehicleReset" class="btn btn-default" style="margin-top: 10px; margin-bottom: 10px" onclick="resetAddRestaurantForm()"> 
+	                			</td>
+	                		</tr>
+	                	</table>
+	                </form>
+			    </div>    
+			</div>
+			
+			<div class="col-sm-8 text-center"> 
+		      <h1>Vehicles</h1>
+		      <hr>
+		       
+	          <div class="row">
+	               <table id="vehiclesTable" class="table table-striped" style="text-align: left">
+				    <thead>
+				      <tr>
+				        <th>Brand</th>
+				        <th>Model</th>
+				        <th>Type</th>
+				        <th>Plates number</th>
+				        <th>Production year</th>
+				        <th>Note</th>
+				      </tr>
+				    </thead>
+				    <tbody>	      
+				    </tbody>
+				  </table>             
+	          </div>
+            <!--/row-->
+    		</div>
+    
+		    <div class="col-sm-2 sidenav" style="padding-top: 20px">
+		      <div class="well">
+		        <p>You have no active order.</p>
+		        <p><a class="btn btn-default" href="#">Find order »</a></p>
+		      </div>
+		    </div>
+		    <div class="col-sm-2 sidenav" style="padding-top: 20px">
+		      <div class="well">
+		        <p>You have no vehicle.</p>
+		        <p><a class="btn btn-default" href="#">Get vehicle »</a></p>
+		      </div>
+		    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>

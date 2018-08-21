@@ -129,6 +129,7 @@ function createTableRow(restaurant){
 	
 	//append cells to row
 	tr.append(nameTd).append(addressTd).append(categoryTd).append(actionsTd);
+	return tr;
 }
 
 /**
