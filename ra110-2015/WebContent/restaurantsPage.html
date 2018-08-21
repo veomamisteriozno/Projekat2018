@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food delivery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />     
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="scripts/restaurantsPageScript.js"></script>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="margin-bottom: 0; border-radius: 0">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Food delivery</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- Left links -->
+		      <ul class="nav navbar-nav">
+		        <li><a href="index.html">Index</a></li>
+		        <li class="active"><a href="restaurantsPage.html">Restaurants</a></li>
+		        <li><a href="#">Meals and drinks</a></li>	
+		        <li><a href="#">Users</a></li>	
+		        <li><a href="#">Vehicles</a></li>		
+		        <li><a href="#">Orders</a></li>	        
+		      </ul>		     
+
+			  <!-- Right links -->
+		      <ul class="nav navbar-nav navbar-right">		      
+		        <li><a href="loginAndRegisterPage.html">Login/Register</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">username<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Account info</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Logout</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+			<div class="col-sm-2 sidenav admin" style="padding-top: 20px">
+				<div class="well">
+			        <h2 id="title">Add restaurant</h2>		      
+			        <hr style="border-top: 1px solid white;">				
+	                <form id="addRestaurant">
+	                	<table style="width: 100%; text-align: center">
+	                		<tr><td> <input type="hidden" name="id" placeholder="Restaurant id" required style="width: 100%;"/> </td></tr>
+	                		<tr><th> Name: </th></tr>
+	                		<tr><td> <input type="text" name="name" placeholder="Restaurant name" required style="width: 100%;"/>  </td></tr>
+	                		<tr><th> Address: </th></tr>
+	                		<tr><td> <input type="text" name="address" placeholder="Address 21, City" required style="width: 100%;"/>  </td></tr>
+	                		<tr><th> Category: </th></tr>
+	                		<tr>
+	                			<td>
+	                			<select name="category" style="width: 100%; height: 25px" required="required">
+	                				<option>Homestyle food </option>
+	                				<option>Grilled food </option>
+	                				<option>Chinese food </option>
+	                				<option>Indian food </option>
+	                				<option>Pastry shop</option>
+	                				<option>Pizzeria</option>
+	                			</select>
+	                			</td>
+	                		</tr>
+	                		<tr>
+	                			<td> 
+	                				<input type="submit" value="Add" name="addRestaurantSubmit" class="btn btn-default" style="margin-top: 10px; margin-bottom: 10px"> 
+	                				<input type="button" value="Reset" name="addRestaurantReset" class="btn btn-default" style="margin-top: 10px; margin-bottom: 10px" onclick="resetAddRestaurantForm()"> 
+	                			</td>
+	                		</tr>
+	                	</table>
+	                </form>
+			    </div>    
+			</div>
+			
+			<div class="col-sm-8 text-center"> 
+		      <h1>Search restaurants</h1>	
+		       <form id="searchRestaurants">
+               	<table style="width: 100%; text-align: center">
+               		<tr>
+               			<td> Name: <br/> 
+               				<input type="text" name="name" placeholder="Restaurant name" style="width: 90%;"/>
+               			</td>
+               			<td> Address: <br/>
+               				<input type="text" name="address" placeholder="Address 21, City" required style="width: 90%;"/>
+               			</td>
+               			<td> Category: <br/>
+               				<select name="category" style="width: 90%; height: 25px" required="required">
+               				<option selected="selected">Choose category </option>
+               				<option>Homestyle food </option>
+               				<option>Grilled food </option>
+               				<option>Chinese food </option>
+               				<option>Indian food </option>
+               				<option>Pastry shop</option>
+               				<option>Pizzeria</option>
+               			</select>
+               			</td>
+               		</tr>
+               		<tr>
+               		<td style="text-align: center" colspan="3">
+               			<button type="button" id="searchRestaurantsBtn" class="btn btn-default" style="margin-top: 10px; margin-bottom: 10px">Search</button>
+                        <button type="button" id="searchRestaurantsBtn" class="btn btn-default" style="margin-top: 10px; margin-bottom: 10px">Clear search</button>
+               		</td>
+               		</tr>
+               	</table>
+	           </form>	                	      
+		      <hr>
+		       
+	          <div class="row">
+	               <table id="restaurantsTable" class="table table-striped" style="text-align: left">
+				    <thead>
+				      <tr>
+				        <th>Name</th>
+				        <th>Address</th>
+				        <th>Category</th>
+				      </tr>
+				    </thead>
+				    <tbody>	      
+				    </tbody>
+				  </table>             
+	          </div>
+            <!--/row-->
+    		</div>
+    
+		    <div class="col-sm-2 sidenav" style="padding-top: 20px">
+		      <div class="well">
+		        <p>Your cart is currently empty.</p>
+		        <p><a class="btn btn-default" href="#">Find food »</a></p>
+		      </div>
+		    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
